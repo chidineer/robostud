@@ -45,7 +45,7 @@ private:
         selected_scan.ranges = selected_ranges;
 
         // Publish the selected scan data
-        c->publish(selected_scan);
+        publisher_->publish(selected_scan);
     }
 
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr subscription_;
