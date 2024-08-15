@@ -7,6 +7,11 @@ ln -s /path/to/your/package .
 ```
 
 ## How to compile
+### Compile All
+```bash
+colcon build --symlink-install
+```
+### Compile single package
 ```bash
 colcon build --packages-select <package_name>
 ```
