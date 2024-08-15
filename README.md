@@ -39,5 +39,12 @@ export TURTLEBOT3_MODEL=waffle_pi
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
 
+## When in doubt
+```bash
+source ~/.bashrc
+```
+```bash
+source ~/ros2_ws/install/setup.bash
+```
 
 
