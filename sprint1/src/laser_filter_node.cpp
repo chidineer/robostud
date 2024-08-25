@@ -15,8 +15,6 @@ public:
         filtered_scan_pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("filtered_scan", 10);
 
         // Get use nth point. Make 5 unless specified otherwise
-        this->declare_parameter<int>("nth_point", 5);
-        nth_point_ = this->get_parameter("nth_point").as_int();
     }
 
 private:
