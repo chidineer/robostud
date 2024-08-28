@@ -33,6 +33,16 @@ ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
 ros2 launch turtlebot3_bringup rviz2.launch.py
 ```
 
+## Launch Cartographer
+```bash
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+```
+
+## Launch GMapping
+```bash
+ros2 launch turtlebot3_slam turtlebot3_slam.launch.py slam_methods:=gmapping use_sim_time:=True
+```
+
 ## Launch teleop
 ```bash
 export TURTLEBOT3_MODEL=waffle_pi 
