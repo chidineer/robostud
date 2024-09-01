@@ -1,0 +1,4 @@
+source;share/dead_reckoning_cpp/local_setup.bash
+source;share/dead_reckoning_cpp/local_setup.dsv
+source;share/dead_reckoning_cpp/local_setup.sh
+source;share/dead_reckoning_cpp/local_setup.zsh

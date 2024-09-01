@@ -1,0 +1,64 @@
+[0.010s] Invoking command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/chidalu/uni/robostud/dead_reckoning_cpp -DCMAKE_INSTALL_PREFIX=/home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp
+[0.081s] -- The C compiler identification is GNU 11.4.0
+[0.299s] -- The CXX compiler identification is GNU 11.4.0
+[0.445s] -- Detecting C compiler ABI info
+[0.524s] -- Detecting C compiler ABI info - done
+[0.529s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.530s] -- Detecting C compile features
+[0.530s] -- Detecting C compile features - done
+[0.532s] -- Detecting CXX compiler ABI info
+[0.617s] -- Detecting CXX compiler ABI info - done
+[0.623s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.623s] -- Detecting CXX compile features
+[0.623s] -- Detecting CXX compile features - done
+[0.626s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.713s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.785s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.895s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.899s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.907s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.920s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.939s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.005s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.008s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.517s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.044s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.110s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.119s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.199s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.200s] -- Found Threads: TRUE  
+[3.331s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[3.370s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[3.444s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.509s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.575s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.575s] -- Configured cppcheck include dirs: 
+[3.575s] -- Configured cppcheck exclude dirs and/or files: 
+[3.577s] -- Added test 'lint_cmake' to check CMake code style
+[3.582s] -- Added test 'uncrustify' to check C / C++ code style
+[3.582s] -- Configured uncrustify additional arguments: 
+[3.583s] -- Added test 'xmllint' to check XML markup files
+[3.584s] -- Configuring done
+[3.588s] -- Generating done
+[3.589s] -- Build files have been written to: /home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp
+[3.596s] Invoked command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/chidalu/uni/robostud/dead_reckoning_cpp -DCMAKE_INSTALL_PREFIX=/home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp
+[3.598s] Invoking command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp -- -j8 -l8
+[3.613s] Invoked command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp -- -j8 -l8
+[3.627s] Invoking command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp
+[3.629s] -- Install configuration: ""
+[3.629s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/ament_index/resource_index/package_run_dependencies/dead_reckoning_cpp
+[3.630s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/ament_index/resource_index/parent_prefix_path/dead_reckoning_cpp
+[3.630s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/environment/ament_prefix_path.sh
+[3.630s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/environment/ament_prefix_path.dsv
+[3.630s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/environment/path.sh
+[3.630s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/environment/path.dsv
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/local_setup.bash
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/local_setup.sh
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/local_setup.zsh
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/local_setup.dsv
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/package.dsv
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/ament_index/resource_index/packages/dead_reckoning_cpp
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/cmake/dead_reckoning_cppConfig.cmake
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/cmake/dead_reckoning_cppConfig-version.cmake
+[3.631s] -- Installing: /home/chidalu/uni/robostud/dead_reckoning_cpp/install/dead_reckoning_cpp/share/dead_reckoning_cpp/package.xml
+[3.632s] Invoked command in '/home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chidalu/ros2_ws/install/turtlebot3_teleop:/home/chidalu/ros2_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/chidalu/uni/robostud/dead_reckoning_cpp/build/dead_reckoning_cpp
