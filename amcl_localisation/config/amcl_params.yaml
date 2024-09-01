@@ -1,0 +1,11 @@
+amcl:
+  ros__parameters:
+    min_particles: 500
+    max_particles: 2000
+    kld_err: 0.01
+    kld_z: 0.99
+    update_min_d: 0.2
+    update_min_a: 0.2
+    transform_tolerance: 1.0
+    reconfigure_kinematic_model: true
+    laser_model_type: likelihood_field
