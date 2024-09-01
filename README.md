@@ -48,6 +48,11 @@ ros2 launch turtlebot3_slam turtlebot3_slam.launch.py slam_methods:=gmapping use
 export TURTLEBOT3_MODEL=waffle_pi 
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
+## RQT Plot for graph
+```bash
+ros2 run rqt_plot rqt_plot
+```
+Note: Need to be specific: /odom/pose/pose/position
 
 ## When in doubt
 ```bash
