@@ -38,6 +38,12 @@ ros2 launch turtlebot3_bringup rviz2.launch.py
 ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ```
 
+## Localisation & Navigation Stack
+```bash
+export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch warehouse_navigation warehouse.launch.py
+```
+
 ## Launch GMapping
 ```bash
 ros2 launch turtlebot3_slam turtlebot3_slam.launch.py slam_methods:=gmapping use_sim_time:=True
