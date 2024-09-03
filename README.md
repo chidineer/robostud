@@ -22,6 +22,12 @@ export TURTLEBOT3_MODEL=waffle_pi
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 
+## Launch Turtlebot3 World
+```bash
+export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch turtlebot3_gazebo turtlebot3_warehouse.launch.py
+```
+
 ## Launch Turtlebot3 House
 ```bash
 export TURTLEBOT3_MODEL=waffle_pi 
@@ -63,8 +69,6 @@ Note: Need to be specific: /odom/pose/pose/position
 ## When in doubt
 ```bash
 source ~/.bashrc
-```
-```bash
 source ~/ros2_ws/install/setup.bash
 ```
 
