@@ -22,7 +22,7 @@ export TURTLEBOT3_MODEL=waffle_pi
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 
-## Launch Turtlebot3 World
+## Launch Turtlebot3 Warehouse
 ```bash
 export TURTLEBOT3_MODEL=waffle_pi 
 ros2 launch turtlebot3_gazebo turtlebot3_warehouse.launch.py
