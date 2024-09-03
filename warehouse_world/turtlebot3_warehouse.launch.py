@@ -30,13 +30,13 @@ def generate_launch_description():
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='6.0')
-    y_pose = LaunchConfiguration('y_pose', default='-6.0')
+    x_pose = LaunchConfiguration('x_pose', default='1.0')
+    y_pose = LaunchConfiguration('y_pose', default='-4.0')
 
     world = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
         'worlds',
-        'turtlebot3_warehouse.world'
+        'turtlebot3_small_warehouse.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
