@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sprint_2_localiser</name>
+  <version>0.0.1</version>
+  <description>ROS2 package to implement a scan-matching localizer using odometry and laser scan data</description>
+
+  <maintainer email="jarred.g.deluca@student.uts.edu.au">Jarred Deluca</maintainer>
+  <license>Apache License 2.0</license>
+
+  <!-- Build tool dependencies -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>rclcpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>  <!-- For Odometry -->
+  <build_depend>opencv4</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>tf2</build_depend>  <!-- Added for tf2 -->
+  <build_depend>tf2_geometry_msgs</build_depend>  <!-- For tf2 geometry -->
+  <build_depend>std_srvs</build_depend>  <!-- Added for SetBool service -->
+
+  
+
+  <!-- Execution dependencies -->
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>  <!-- For Odometry -->
+  <exec_depend>opencv4</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>tf2</exec_depend>  <!-- Added for tf2 -->
+  <exec_depend>tf2_geometry_msgs</exec_depend>  <!-- For tf2 geometry -->
+  <exec_depend>std_srvs</exec_depend>  <!-- Added for SetBool service -->
+
+  <!-- Test dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
