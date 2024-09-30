@@ -34,7 +34,7 @@ def generate_launch_description():
         default=os.path.join(
             get_package_share_directory('warehouse_navigation'),
             'map',
-            'small_warehouse.yaml'))
+            'real_warehouse.yaml'))
 
     param_file_name = TURTLEBOT3_MODEL + '.yaml'
     param_dir = LaunchConfiguration(

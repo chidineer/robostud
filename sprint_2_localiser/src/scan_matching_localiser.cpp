@@ -139,7 +139,7 @@ private:
 
     // Function to extract a section of the map around the robot
     cv::Mat extractMapSection(const cv::Point2d& robot_pose) {
-        int size = 100;  // Define the size of the section to extract (in pixels)
+        int size = 500;  // Define the size of the section to extract (in pixels)
         int x_start = std::max(0, int(robot_pose.x - size / 2));
         int y_start = std::max(0, int(robot_pose.y - size / 2));
         int x_end = std::min(map_image_.cols, int(robot_pose.x + size / 2));
