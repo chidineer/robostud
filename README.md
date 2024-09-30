@@ -66,6 +66,10 @@ ros2 run rqt_plot rqt_plot
 ```
 Note: Need to be specific: /odom/pose/pose/position
 
+## To run Navigation Goal Sender
+```bash
+ros2 run goal_sender goal_sender --ros-args -p goals_file:=/home/chidalu/uni/robostud/goal_sender/src/goals.txt
+```
 ## When in doubt
 ```bash
 source ~/.bashrc
