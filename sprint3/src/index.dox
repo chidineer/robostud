@@ -1,0 +1,56 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage Robotic Studio 1 - Sprint 3
+
+This is the documentation for RS1 Sprint 3.
+
+@section ac_doc_behavior Code Behaviour
+This project encompasses SLO3.6
+
+@section ac_doc_install Installation
+
+@subsection ac_doc_step1 Step 1: Compilation
+
+In your current working directory please run:
+
+  \verbatim
+colcon build --symlink-install --packages-select sprint3
+  \endverbatim
+
+@subsection ac_doc_step2 Step 2: Launch Gazebo and Navigation
+
+To run gazebo and nav:
+
+  \verbatim
+export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch turtlebot3_gazebo turtlebot3_warehouse.launch.py
+  \endverbatim
+
+  \verbatim
+export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch warehouse_navigation warehouse.launch.py
+  \endverbatim
+
+@subsection ac_doc_step3 Step 3: Place Cylinder 
+
+  \verbatim
+ros2 run sprint3 place_cylinder --ros-args -p x:=-8.0 -p y:=-2.5
+  \endverbatim
+
+@subsection ac_doc_step4 Step 4: Filter Cylinder
+In a separate terminal, start ackerman
+
+  \verbatim
+ros2 run sprint3 filter_cylinder
+  \endverbatim
+
+@n By Chidalu Chukwuneke
+@n chidalu.chukwuneke@student.uts.edu.au
+
+*/

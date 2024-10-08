@@ -1,0 +1,26 @@
+This is the documentation for RS1 Sprint 3.\hypertarget{index_ac_doc_behavior}{}\doxysection{Code Behaviour}\label{index_ac_doc_behavior}
+This project encompasses SLO3.\+6\hypertarget{index_ac_doc_install}{}\doxysection{Installation}\label{index_ac_doc_install}
+\hypertarget{index_ac_doc_step1}{}\doxysubsection{Step 1\+: Compilation}\label{index_ac_doc_step1}
+In your current working directory please run\+:
+
+\begin{DoxyVerb}colcon build --symlink-install --packages-select sprint3\end{DoxyVerb}
+\hypertarget{index_ac_doc_step2}{}\doxysubsection{Step 2\+: Launch Gazebo and Navigation}\label{index_ac_doc_step2}
+To run gazebo and nav\+:
+
+\begin{DoxyVerb}export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch turtlebot3_gazebo turtlebot3_warehouse.launch.py\end{DoxyVerb}
+
+
+\begin{DoxyVerb}export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch warehouse_navigation warehouse.launch.py\end{DoxyVerb}
+\hypertarget{index_ac_doc_step3}{}\doxysubsection{Step 3\+: Place Cylinder}\label{index_ac_doc_step3}
+\begin{DoxyVerb}ros2 run sprint3 place_cylinder --ros-args -p x:=-8.0 -p y:=-2.5\end{DoxyVerb}
+\hypertarget{index_ac_doc_step4}{}\doxysubsection{Step 4\+: Filter Cylinder}\label{index_ac_doc_step4}
+In a separate terminal, start ackerman
+
+\begin{DoxyVerb}ros2 run sprint3 filter_cylinder\end{DoxyVerb}
+
+
+~\newline
+ By Chidalu Chukwuneke ~\newline
+ \href{mailto:chidalu.chukwuneke@student.uts.edu.au}{\texttt{ chidalu.\+chukwuneke@student.\+uts.\+edu.\+au}} 
