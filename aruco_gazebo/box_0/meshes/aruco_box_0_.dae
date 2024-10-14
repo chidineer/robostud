@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>Manual Creation</authoring_tool>
+        </contributor>
+        <created>2024-10-14T00:00:00</created>
+        <modified>2024-10-14T00:00:00</modified>
+        <unit name="meter" meter="1"/>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_geometries>
+        <geometry id="CubeGeometry" name="Cube">
+            <mesh>
+                <source id="CubePositions">
+                    <float_array id="CubePositionsArray" count="24">
+                        -0.05 0.05 0.05  0.05 0.05 0.05  0.05 0.15 0.05  -0.05 0.15 0.05
+                        -0.05 0.05 -0.05  0.05 0.05 -0.05  0.05 0.15 -0.05  -0.05 0.15 -0.05
+                    </float_array>
+                    <technique_common>
+                        <accessor source="#CubePositionsArray" count="8" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="CubeNormals">
+                    <float_array id="CubeNormalsArray" count="18">
+                        0 0 1  0 0 -1  1 0 0  -1 0 0  0 1 0  0 -1 0
+                    </float_array>
+                    <technique_common>
+                        <accessor source="#CubeNormalsArray" count="6" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="CubeVertices">
+                    <input semantic="POSITION" source="#CubePositions"/>
+                </vertices>
+                <triangles count="12" material="RedMaterial">
+                    <input semantic="VERTEX" source="#CubeVertices" offset="0"/>
+                    <input semantic="NORMAL" source="#CubeNormals" offset="1"/>
+                    <p>0 0 1 0 2 0 0 0 2 0 3 0 4 1 5 1 6 1 4 1 6 1 7 1
+                        1 2 5 2 6 2 1 2 6 2 2 2 0 3 3 3 7 3 0 3 7 3 4 3
+                        2 4 6 4 7 4 2 4 7 4 3 4 0 5 4 5 5 5 0 5 5 5 1 5</p>
+                </triangles>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="Scene" name="Scene">
+            <node id="Cube" name="Cube" type="NODE">
+                <translate>0 0 0</translate>
+                <scale>1 1 1</scale>
+                <instance_geometry url="#CubeGeometry">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="RedMaterial" target="#RedMaterial"/>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <library_materials>
+        <material id="RedMaterial" name="RedMaterial">
+            <instance_effect url="#RedEffect"/>
+        </material>
+    </library_materials>
+    <library_effects>
+        <effect id="RedEffect">
+            <profile_COMMON>
+                <technique sid="common">
+                    <phong>
+                        <diffuse>
+                            <color>1.0 1.0 0.0 1.0</color> <!-- Red color -->
+                        </diffuse>
+                    </phong>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <scene>
+        <instance_visual_scene url="#Scene"/>
+    </scene>
+</COLLADA>

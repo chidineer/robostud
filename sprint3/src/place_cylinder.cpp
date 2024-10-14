@@ -33,7 +33,7 @@ public:
         this->declare_parameter<double>("y", 0.0);
 
         // Spawn the cylinder
-        spawnCylinder();
+        putCylinder();
     }
 
 private:
@@ -44,7 +44,7 @@ private:
      * description for the cylinder, and calls the Gazebo spawn_entity service to create
      * the cylinder in the simulation.
      */
-    void spawnCylinder()
+    void putCylinder()
     {
         // Retrieve x and y coordinates from the parameters
         double x, y;

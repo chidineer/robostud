@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="box_1">
+    <static>false</static> <!-- Set to true if you don't want the box to move -->
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://box_1/meshes/aruco_box_1_.dae</uri> <!-- Path to your .dae file -->
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://box_1/meshes/aruco_box_1_.dae</uri> <!-- Path to your .dae file -->
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

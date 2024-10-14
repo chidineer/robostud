@@ -1,0 +1,4 @@
+source;share/turtlebot_color_detector/local_setup.bash
+source;share/turtlebot_color_detector/local_setup.dsv
+source;share/turtlebot_color_detector/local_setup.sh
+source;share/turtlebot_color_detector/local_setup.zsh

@@ -40,7 +40,7 @@ public:
 
         // Subscribe to the /scan and /odom topics
         scan_subscriber_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-            "/scan", 10, std::bind(&FilterCylinderNode::laserScanCallback, this, std::placeholders::_1));
+            "/scan", 10, std::bind(&FilterCylinderNode::laserscanCallback, this, std::placeholders::_1));
 
         odom_subscriber_ = this->create_subscription<nav_msgs::msg::Odometry>(
             "/odom", 10, std::bind(&FilterCylinderNode::odomCallback, this, std::placeholders::_1));
@@ -155,7 +155,7 @@ private:
      * @brief Callback function for processing laser scan messages
      * @param scan_msg Shared pointer to the laser scan message
      */
-    void laserScanCallback(const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)
+    void laserscanCallback(const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)
     {
         if (!scan_msg || scan_msg->ranges.empty()) {
             RCLCPP_ERROR(this->get_logger(), "Invalid or empty laser scan message.");
@@ -322,7 +322,7 @@ private:
     void publishMarker(const Point2D &point)
     {
         visualization_msgs::msg::Marker marker;
-        marker.header.frame_id = "odom";
+        marker.header.frame_id = "world";
         marker.header.stamp = this->get_clock()->now();
         marker.ns = "cylinder_marker";
         marker.id = point.index;
