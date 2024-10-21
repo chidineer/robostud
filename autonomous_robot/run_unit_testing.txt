@@ -1,0 +1,7 @@
+./build/autonomous_robot/LOCALIZATION
+
+./build/autonomous_robot/NAVIGATION
+
+./build/autonomous_robot/CATALOGUING
+
+./build/autonomous_robot/TASKALLOCATION

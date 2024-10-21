@@ -1,0 +1,43 @@
+/*! \page cylinder_filter_and_placement Cylinder Filter and Placement
+
+\section overview_sec Overview
+This section documents the functionality of the two nodes:
+1. \b FilterCylinderNode: Responsible for processing laser scan data to detect cylindrical objects (such as obstacles) and visualize their locations using Gazebo markers.
+2. \b PlaceCylinderNode: Responsible for spawning cylindrical entities in the Gazebo simulation environment at specified coordinates.
+
+\section filter_cylinder_node_sec FilterCylinderNode
+The \b FilterCylinderNode subscribes to the \b /scan and \b /odom topics to process laser scan data and odometry. It clusters the scan points to identify cylindrical objects, visualizes these objects using markers in Gazebo, and optionally draws the detected objects on the map.
+
+- Subscribed topics:
+  - \b /scan : Receives laser scan data to detect obstacles (sensor_msgs::msg::LaserScan).
+  - \b /odom : Receives odometry data to transform laser scan points into the global frame (nav_msgs::msg::Odometry).
+
+- Published topics:
+  - \b /visualization_marker : Publishes markers for detected cylinders in Gazebo (visualization_msgs::msg::Marker).
+
+- Key functionality:
+  - Processes laser scan data and clusters points to detect cylindrical obstacles.
+  - Converts clustered points to the global frame using the robot's pose.
+  - Optionally publishes Gazebo markers and displays detected obstacles on the map using OpenCV.
+
+Example usage:
+\code{.sh}
+ros2 run your_package_name filter_cylinder_node
+\endcode
+
+\section place_cylinder_node_sec PlaceCylinderNode
+The \b PlaceCylinderNode spawns a cylindrical object at specified x and y coordinates in the Gazebo environment. The cylinder has a fixed diameter of 30 cm and a height of 1 m.
+
+- Parameters:
+  - \b x : The x-coordinate where the cylinder should be placed.
+  - \b y : The y-coordinate where the cylinder should be placed.
+
+- Key functionality:
+  - Spawns a cylindrical object in the Gazebo simulation using the \b /spawn_entity service.
+  
+Example usage:
+\code{.sh}
+ros2 run your_package_name place_cylinder_node --ros-args -p x:=1.5 -p y:=2.0
+\endcode
+
+*/

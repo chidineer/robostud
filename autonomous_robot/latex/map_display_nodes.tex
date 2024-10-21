@@ -1,0 +1,44 @@
+\hypertarget{index_overview_sec}{}\doxysection{Overview}\label{index_overview_sec}
+This page documents two nodes that display maps during and after the mapping process\+:
+\begin{DoxyItemize}
+\item {\bfseries{Show\+Current\+Map\+:}} Displays the current map during the mapping process alongside a ground truth map.
+\item {\bfseries{Show\+Finished\+Map\+:}} Displays the final saved map after the mapping task alongside the ground truth map.
+\end{DoxyItemize}\hypertarget{map_display_nodes_show_current_map_node_sec}{}\doxysection{Show\+Current\+Map\+Node}\label{map_display_nodes_show_current_map_node_sec}
+The {\bfseries{Show\+Current\+Map\+Node}} subscribes to the {\ttfamily /map} topic, which publishes the current occupancy grid during the mapping process. It visualizes the map side by side with the ground truth map using Open\+CV.
+
+
+\begin{DoxyItemize}
+\item Subscribed Topics\+:
+\begin{DoxyItemize}
+\item {\bfseries{/map}} \+: Receives the current occupancy grid (nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid).
+\end{DoxyItemize}
+\item Key functionality\+:
+\begin{DoxyItemize}
+\item Converts the occupancy grid into an Open\+CV image.
+\item Displays the current map and the ground truth map side by side using Open\+CV.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run your\_package\_name show\_current\_map}
+
+\end{DoxyCode}
+\hypertarget{map_display_nodes_show_finished_map_node_sec}{}\doxysection{Show\+Finished\+Map\+Node}\label{map_display_nodes_show_finished_map_node_sec}
+The {\bfseries{Show\+Finished\+Map\+Node}} loads the final saved map after the mapping task is complete, along with the ground truth map. It displays both maps side by side using Open\+CV.
+
+
+\begin{DoxyItemize}
+\item Key functionality\+:
+\begin{DoxyItemize}
+\item Loads the ground truth map and final map from disk.
+\item Displays both maps side by side using Open\+CV.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run your\_package\_name show\_finished\_map}
+
+\end{DoxyCode}
+ 

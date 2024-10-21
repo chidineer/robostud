@@ -1,0 +1,6 @@
+<color>1.0 0.0 0.0 1.0</color> <!-- Red color -->
+<color>1.0 1.0 0.0 1.0</color> <!-- Yellow color -->
+<color>0.0 0.0 1.0 1.0</color> <!-- Blue color -->
+<color>0.0 1.0 0.0 1.0</color> <!-- Green color -->
+<color>1.0 0.5 0.0 1.0</color> <!-- Orange color -->
+<color>0.5 0.0 0.5 1.0</color> <!-- Purple color -->

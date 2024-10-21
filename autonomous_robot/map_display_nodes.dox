@@ -1,0 +1,38 @@
+/*!
+ * \page map_display_nodes Map Display Nodes
+ * 
+ * \section overview_sec Overview
+ * This page documents two nodes that display maps during and after the mapping process:
+ * - \b ShowCurrentMap: Displays the current map during the mapping process alongside a ground truth map.
+ * - \b ShowFinishedMap: Displays the final saved map after the mapping task alongside the ground truth map.
+ * 
+ * \section show_current_map_node_sec ShowCurrentMapNode
+ * The \b ShowCurrentMapNode subscribes to the `/map` topic, which publishes the current occupancy grid during the mapping process. It visualizes the map 
+ * side by side with the ground truth map using OpenCV.
+ * 
+ * - Subscribed Topics:
+ *   - \b /map : Receives the current occupancy grid (nav_msgs::msg::OccupancyGrid).
+ * 
+ * - Key functionality:
+ *   - Converts the occupancy grid into an OpenCV image.
+ *   - Displays the current map and the ground truth map side by side using OpenCV.
+ * 
+ * Example usage:
+ * \code{.sh}
+ * ros2 run your_package_name show_current_map
+ * \endcode
+ * 
+ * \section show_finished_map_node_sec ShowFinishedMapNode
+ * The \b ShowFinishedMapNode loads the final saved map after the mapping task is complete, along with the ground truth map. It displays both maps side by side
+ * using OpenCV.
+ * 
+ * - Key functionality:
+ *   - Loads the ground truth map and final map from disk.
+ *   - Displays both maps side by side using OpenCV.
+ * 
+ * Example usage:
+ * \code{.sh}
+ * ros2 run your_package_name show_finished_map
+ * \endcode
+ * 
+ */

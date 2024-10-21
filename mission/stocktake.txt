@@ -1,0 +1,12 @@
+Red: 2
+  Location: (-1.00, 12.00)
+  Location: (5.50, 12.00)
+Blue: 1
+  Location: (2.50, 12.00)
+Yellow: 1
+  Location: (0.00, 12.00)
+Green: 1
+  Location: (3.50, 12.00)
+Orange: 0
+Purple: 1
+  Location: (6.50, 12.00)

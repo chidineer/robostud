@@ -1,0 +1,54 @@
+\hypertarget{index_overview_sec}{}\doxysection{Overview}\label{index_overview_sec}
+This section documents the functionality of the two nodes\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Filter\+Cylinder\+Node\+:}} Responsible for processing laser scan data to detect cylindrical objects (such as obstacles) and visualize their locations using Gazebo markers.
+\item {\bfseries{Place\+Cylinder\+Node\+:}} Responsible for spawning cylindrical entities in the Gazebo simulation environment at specified coordinates.
+\end{DoxyEnumerate}\hypertarget{cylinder_filter_and_placement_filter_cylinder_node_sec}{}\doxysection{Filter\+Cylinder\+Node}\label{cylinder_filter_and_placement_filter_cylinder_node_sec}
+The {\bfseries{Filter\+Cylinder\+Node}} subscribes to the {\bfseries{/scan}} and {\bfseries{/odom}} topics to process laser scan data and odometry. It clusters the scan points to identify cylindrical objects, visualizes these objects using markers in Gazebo, and optionally draws the detected objects on the map.
+
+
+\begin{DoxyItemize}
+\item Subscribed topics\+:
+\begin{DoxyItemize}
+\item {\bfseries{/scan}} \+: Receives laser scan data to detect obstacles (sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan).
+\item {\bfseries{/odom}} \+: Receives odometry data to transform laser scan points into the global frame (nav\+\_\+msgs\+::msg\+::\+Odometry).
+\end{DoxyItemize}
+\item Published topics\+:
+\begin{DoxyItemize}
+\item {\bfseries{/visualization\+\_\+marker}} \+: Publishes markers for detected cylinders in Gazebo (visualization\+\_\+msgs\+::msg\+::\+Marker).
+\end{DoxyItemize}
+\item Key functionality\+:
+\begin{DoxyItemize}
+\item Processes laser scan data and clusters points to detect cylindrical obstacles.
+\item Converts clustered points to the global frame using the robot\textquotesingle{}s pose.
+\item Optionally publishes Gazebo markers and displays detected obstacles on the map using Open\+CV.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run your\_package\_name filter\_cylinder\_node}
+
+\end{DoxyCode}
+\hypertarget{cylinder_filter_and_placement_place_cylinder_node_sec}{}\doxysection{Place\+Cylinder\+Node}\label{cylinder_filter_and_placement_place_cylinder_node_sec}
+The {\bfseries{Place\+Cylinder\+Node}} spawns a cylindrical object at specified x and y coordinates in the Gazebo environment. The cylinder has a fixed diameter of 30 cm and a height of 1 m.
+
+
+\begin{DoxyItemize}
+\item Parameters\+:
+\begin{DoxyItemize}
+\item {\bfseries{x}} \+: The x-\/coordinate where the cylinder should be placed.
+\item {\bfseries{y}} \+: The y-\/coordinate where the cylinder should be placed.
+\end{DoxyItemize}
+\item Key functionality\+:
+\begin{DoxyItemize}
+\item Spawns a cylindrical object in the Gazebo simulation using the {\bfseries{/spawn\+\_\+entity}} service.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run your\_package\_name place\_cylinder\_node -\/-\/ros-\/args -\/p x:=1.5 -\/p y:=2.0}
+
+\end{DoxyCode}
+ 

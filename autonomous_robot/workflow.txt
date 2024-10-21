@@ -1,0 +1,79 @@
+# Record ROS Bag
+ros2 bag record -a -o /home/student/ros2_ws/src/autonomous_robot/ros_bags/
+
+# Create Ground Truth Map
+ros2 run gazebo_map_creator request_map.py -c '(-7.5,-9.0,1.0)(7.5,9.0,5.0)' -r 0.05 -f $PWD/map
+
+gazebo -s libgazebo_map_creator.so /usr/share/gazebo-11/worlds/turtlebot3_real_warehouse.world
+
+# Compile 
+colcon build --symlink-install --packages-select autonomous_robot
+
+# Launch World
+export TURTLEBOT3_MODEL=waffle_pi
+ros2 launch turtlebot3_gazebo turtlebot3_warehouse.launch.py use_sim_time:=true
+
+# Autonomous Mapping 
+ros2 run autonomous_robot autonomous_mapping
+
+# Map Comparator
+ros2 run map_comparator show_current_map
+
+ros2 run map_comparator show_finished_map
+
+# Restart exploration 
+ros2 service call /restart_explore_lite std_srvs/srv/Trigger
+
+# Save map manually
+ros2 service call /save_map std_srvs/srv/Trigger
+
+ros2 service call /cancel_goal std_srvs/srv/Trigger
+
+cd ~/ros2_ws/src/autonomous_robot/map
+ros2 run nav2_map_server map_saver_cli -f map
+
+# Localisation and Navigation
+ros2 run autonomous_robot localizer_and_navigation 0.0 0.0 0.0
+
+export TURTLEBOT3_MODEL=waffle_pi 
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=true map:=/home/student/ros2_ws/src/autonomous_robot/map/real_warehouse.yaml
+
+# Test Navigation
+
+ros2 topic pub -1 /scam_goals geometry_msgs/msg/PoseArray "{
+  header: {
+    stamp: {sec: 0, nanosec: 0},
+    frame_id: 'map'
+  },
+  poses: [
+    {
+      position: {x: -2.137545702506908, y: -1.5624387226344125, z: 0.0},
+      orientation: {x: 0.0, y: 0.0, z: -0.8348775399611286, w: 0.5504357303704531}
+    },
+    {
+      position: {x: -1.9213270134257439, y: -0.2583457609854156, z: 0.0},
+      orientation: {x: 0.0, y: 0.0, z: 0.7972283159522016, w: 0.6036779043861195}
+    },
+    {
+      position: {x: 0.9542684696092879, y: 0.02285787721263426, z: 0.0},
+      orientation: {x: 0.0, y: 0.0, z: 0.6219379385848728, w: 0.7830665364761791}
+    },
+    {
+      position: {x: 0.9337033256706286, y: 2.4368324386930014, z: 0.0},
+      orientation: {x: 0.0, y: 0.0, z: 0.9945272879563003, w: 0.10447714348261133}
+    },
+    {
+      position: {x: 1.0157739312887828, y: 4.31022056800608, z: 0.0},
+      orientation: {x: 0.0, y: 0.0, z: 0.6172788347877957, w: 0.7867444566840119}
+
+    }
+  ]
+}"
+
+# Place Cylinder
+ros2 run sprint3 place_cylinder --ros-args -p x:=-8.0 -p y:=-2.5
+
+# Filter Cylinder
+ros2 run sprint3 filter_cylinder
+
+

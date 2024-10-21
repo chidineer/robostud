@@ -1,0 +1,72 @@
+\hypertarget{index_overview_sec}{}\doxysection{Overview}\label{index_overview_sec}
+This project is a ROS 2 package designed for autonomous mapping and navigation using a Turtle\+Bot3 in a simulated or real-\/world environment. The project leverages the SLAM toolbox and Nav2 stack to explore and map the environment, with the option to save maps and restart exploration.\hypertarget{index_related_pages_sec}{}\doxysection{Related Pages}\label{index_related_pages_sec}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{cylinder_filter_and_placement}{Cylinder Filter and Placement}} \+: Documentation on the Cylinder Filter and Placement nodes.
+\item \mbox{\hyperlink{map_display_nodes}{Map Display Nodes}} \+: Documentation on the map display nodes for showing maps during and after the mapping process.
+\end{DoxyItemize}
+
+The project contains two main components\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Autonomous Mapping}}\+: Handles the exploration of unknown environments, restarts exploration upon request, and saves maps for further processing.
+\item {\bfseries{Localizer and Navigation}}\+: Handles goal setting, localization, and navigating to goals within the mapped environment.
+\end{DoxyEnumerate}\hypertarget{index_subscriber_topics_sec}{}\doxysection{Subscriber Topics}\label{index_subscriber_topics_sec}
+The ROS package subscribes to the following topics to receive data necessary for localization and navigation\+:
+\begin{DoxyItemize}
+\item {\bfseries{/amcl\+\_\+pose}} \+: The current pose estimate from the Adaptive Monte Carlo Localization (geometry\+\_\+msgs/msg/\+Pose\+With\+Covariance\+Stamped).
+\item {\bfseries{/scam\+\_\+goals}} \+: Waypoints or goals that the Turtle\+Bot3 should navigate towards (geometry\+\_\+msgs/msg/\+Pose\+Array).
+\end{DoxyItemize}\hypertarget{index_publisher_topics_sec}{}\doxysection{Publisher Topics}\label{index_publisher_topics_sec}
+The package publishes to the following topics to control the Turtle\+Bot3 and provide visualization data\+:
+\begin{DoxyItemize}
+\item {\bfseries{/goal\+\_\+pose}} \+: The next goal for the Turtle\+Bot3 (geometry\+\_\+msgs\+::msg\+::\+Pose\+Stamped).
+\item {\bfseries{/initialpose}} \+: The initial pose for the Turtle\+Bot3 at the start of the localization (geometry\+\_\+msgs\+::msg\+::\+Pose\+With\+Covariance\+Stamped).
+\end{DoxyItemize}\hypertarget{index_services_sec}{}\doxysection{Services}\label{index_services_sec}
+The package provides the following services to control the mapping and navigation process\+:
+\begin{DoxyItemize}
+\item {\bfseries{/restart\+\_\+explore\+\_\+lite}} \+: Restarts the exploration process, clearing previous exploration data and restarting from the current location (std\+\_\+srvs/srv/\+Trigger).
+\item {\bfseries{/save\+\_\+map}} \+: Saves the current map to the specified directory (std\+\_\+srvs/srv/\+Trigger).
+\end{DoxyItemize}\hypertarget{index_classes_sec}{}\doxysection{Classes}\label{index_classes_sec}
+The package implements the following core classes\+:
+\begin{DoxyItemize}
+\item {\bfseries{Autonomous\+Mapping}} \+: This class manages the entire exploration process, including restarting exploration and saving the map.
+\item {\bfseries{Localizer\+And\+Navigation}} \+: This class handles goal setting, publishing initial pose, and navigating towards the goals.
+\end{DoxyItemize}\hypertarget{index_nodes_sec}{}\doxysection{Nodes}\label{index_nodes_sec}
+The ROS package consists of two main nodes\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{autonomous\+\_\+mapping}}\+: This node starts the simulation environment, runs the exploration (using explore\+\_\+lite), and handles the services for restarting the exploration and saving the map.
+\item {\bfseries{localizer\+\_\+and\+\_\+navigation}}\+: This node subscribes to goals and AMCL pose, runs a state machine to navigate towards the goals, and handles goal publishing and state management.
+\end{DoxyEnumerate}\hypertarget{index_unit_testing_sec}{}\doxysection{Unit Testing}\label{index_unit_testing_sec}
+Unit tests are provided to ensure the reliability of the system under various conditions\+:
+\begin{DoxyItemize}
+\item {\bfseries{Test}} map saving \+: Verifies that the map is saved correctly using the save\+\_\+map service.
+\item {\bfseries{Test}} exploration restart \+: Confirms that exploration can be restarted correctly using the restart\+\_\+explore\+\_\+lite service.
+\item {\bfseries{Test}} goal navigation \+: Ensures that the Turtle\+Bot3 can navigate to given goals using the state machine logic.
+\end{DoxyItemize}
+
+Each test is designed to validate the functional requirements and robustness of the system.\hypertarget{index_compiling_sec}{}\doxysection{Compiling the Package}\label{index_compiling_sec}
+To compile the package, ensure your ROS2 environment is set up correctly, then navigate to your ROS2 workspace and execute the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd \string~/ros2\_ws/}
+\DoxyCodeLine{colcon build -\/-\/symlink-\/install -\/-\/packages-\/select autonomous\_robot}
+
+\end{DoxyCode}
+\hypertarget{index_running_mapping}{}\doxysection{Running the Autonomous Mapping Node}\label{index_running_mapping}
+Start the autonomous mapping node\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run autonomous\_robot autonomous\_mapping}
+
+\end{DoxyCode}
+\hypertarget{index_running_navigation}{}\doxysection{Running the Localizer and Navigation Node}\label{index_running_navigation}
+Start the localizer and navigation node\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run autonomous\_robot localizer\_and\_navigation}
+
+\end{DoxyCode}
+\hypertarget{index_setting_goals}{}\doxysection{Setting Goals}\label{index_setting_goals}
+Goals can be set by publishing to the {\ttfamily /scam\+\_\+goals} topic or using a text file to load predefined goals.\hypertarget{index_executing_mission}{}\doxysection{Executing the Mission}\label{index_executing_mission}
+To start the mission and navigate towards goals\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2 run autonomous\_robot localizer\_and\_navigation}
+
+\end{DoxyCode}
+ This command will start the node, subscribe to the {\ttfamily /scam\+\_\+goals} topic, and navigate through the goals while checking for the Turtle\+Bot3\textquotesingle{}s current pose. 
